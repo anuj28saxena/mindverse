@@ -119,17 +119,22 @@ const MemoryGame = () => {
       <h2>🧩 Memory Game</h2>
       {hasWon ? <p className="win-message">🎉 You Won! 🎉</p> : <p>Find all matching pairs!</p>}
       <div className="stats">
-        <p>⏱️ Time: {timer}s</p>
-        <p>🎯 Moves: {moves}</p>
-        {bestTime !== null && <p>🏆 Best Time: {bestTime}s</p>}
-        {bestMoves !== null && <p>🏅 Best Moves: {bestMoves}</p>}
-        <button onClick={() => {
+        <div className="time_and_moves">
+        <p>Time: {timer}s</p>
+        <p>Moves: {moves}</p>
+        {bestTime !== null && <p>Best Time: {bestTime}s</p>}
+        {bestMoves !== null && <p>Best Moves: {bestMoves}</p>}
+        </div>
+
+       
+
+        <button className="clear_btn" onClick={() => {
             localStorage.removeItem("bestTime");
             localStorage.removeItem("bestMoves");
             setBestTime(null);
             setBestMoves(null);
             }}>
-            🧹 Clear Best Scores
+            Clear Best Scores
         </button>
       </div>
         {hasWon && (
@@ -150,7 +155,7 @@ const MemoryGame = () => {
 
         ))}
       </div>
-      <button onClick={resetGame} className="reset-btn">🔄 Restart</button>
+      <button onClick={resetGame} className="reset-btn">Restart</button>
     </div>
   );
 };

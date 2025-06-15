@@ -227,7 +227,25 @@ body {
   background-color: #ffe;
 }
 
+button.clear_btn , .reset-btn {
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-family: system-ui;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
 
+.time_and_moves {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 20%;
+    gap: 15px;
+    justify-content: center;
+}
 
 /* memory game css */
 
